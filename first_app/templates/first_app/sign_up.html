@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+
+<!-- 1. Creating two navigation - home and about.
+     2. Creating two buttons for Sign in and Sign up -->
+    <a href="{% url 'home' %}" target="_self" id = "home" name="first_app/home" style="margin-left: 39px;">Home</a>
+    <a href="{% url 'about' %}" target="_self" id = "about" name="first_app/about" style="margin-left: 39px;">About</a>
+    <button type="button" name="Sign In" style="margin-left: 1209px;" >Sign In</button>
+    <button type="button" name="Sign Up" style="display: inline-flex; margin-left: 20px;padding: " >Sign Up</button>
+    <h1 style="margin-left:50px;">Sign up</h1>
+    <p style="margin-left:50px; margin-top:50px;"> Please fill the details to crete an account</p>
+
+<!-- 1. Creating labels first name, last name, and email.
+     2. creating buttons to submit them.-->
+<!--  Creating forms to submit the  sign-up page -->
+<form action="" method="get">
+    <div>
+        <label style="margin-left:60px;" for="name" id="name"><b>Name</b></label>
+    </div>
+    <div>
+        <input style="margin-left:60px;" type="text" placeholder="Enter first Name" name="name" value="user" required>
+    </div>
+    <div>
+        <label style="margin-left:60px;" for="lastname" id="lastname"><b>LastName</b></label>
+    </div>
+    <div>
+        <input style="margin-left:60px" type="text" name="lastname" id="lastname" placeholder="lastname" required>
+    </div>
+    <div>
+        <label style="margin-left:60px;" for="age">Age</label>
+    </div>
+    <div>
+        <input style="margin-left:60px;" type="number" name="age" id="age" placeholder="age" min="1" max="200" step="any">
+    </div><br>
+    <div>
+        <b style="margin-left:60px;">Gender</b><br>
+
+        <label style="margin-left:60px;" for="male"><b>Male</b></label>
+        <input style="margin-left:60px;" type="radio" name="gender" id="male" value="male" >
+        <label style="margin-left:60px;" for="female"><b>Female</b></label>
+        <input style="margin-left:60px;" type="radio" name="gender" id="female" value="female" >
+    </div><br>
+
+    <!-- Using the select here -->
+    <div>
+        <label style="margin-left:60px;" for="country"><b>Country</b></label>
+        <div>
+            <select style="margin-left:60px;" name="country" id="country">
+                <option value="INDIA">INDIA</option>
+                <option LABEL="USA" value="USA">USA</option>
+            </select>
+        </div>
+    </div>
+
+        <label for="date" style="margin-left:60px;">BirthDate</label>
+        <input style="margin:60px;" type="date" name="date" id="date"><br>
+    <label style="margin-left:60px;" for="email"><b>Email</b></label><br>
+    <input style="margin-left:60px;" type="email" placeholder="Enter your email" id="email" name="email" required><br>
+    <label style="margin-left:60px; margin-top:10px;" for="password"><b>Password</b></label><br>
+    <input style="margin-left:60px;" type="password" placeholder="Password" name="password" id="password" required><br>
+    <label style="margin-left:60px; margin-top:10px;" for="re-password"><b>Re-enter Password</b></label><br>
+    <input style="margin-left:60px;" type="password" placeholder="Re-enter password" name="re-password" id="re-password" required><br>
+    <button style="margin-left:60px; margin-top:10px;" type="submit" name="submit" >Submit</button>
+<!-- To create check boxes
+    <div>
+        <b> Favorite food</b>
+        <div>
+            <label for="banana"><b>Banana</b></label>
+            <input type="checkbox" name="banana" id="banana" >
+        </div>
+        <div>
+            <label for="apple"><b>Apple</b></label>
+            <input type="checkbox" id="apple" name="apple" >
+        </div>
+    </div> -->
+</form>
+
+
+
+    <h3 style="margin-top: 660px;margin-left: 20px;"> Contact Us </h3>
+    <a style="margin-left: 20px;" href="example@trading.com">example@trading.com </a>
+
+</body>
+</html>

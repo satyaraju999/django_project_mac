@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p6>Employee Details</p6>
+<br>
+{% if not exception %}
+<b> Employee Name:</b> {{ name }} <br>
+<b> DOB:</b> {{ dob }} <br>
+<b> Employee salary:</b> {{ salary }} <br>
+<b> Employee Address:</b> {{ address }} <br>
+<b> Employee joined:</b> {{ date_created }} <br>
+<b> Employee updated:</b> {{ date_updated }} <br>
+<b> Employee department:</b> {{ department.name }} <br>
+{% endif %}
+<b> Exception </b> {{ exception }}
+</body>
+</html>l>

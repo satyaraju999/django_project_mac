@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+</head>
+
+<body>
+
+<!-- 1. Creating two navigation - home and about.
+     2. Creating two buttons for Sign in and Sign up -->
+    <a href="{% url 'home' %}" target="_self" id = "home" name="first_app/home" style="margin-left: 39px;">Home</a>
+    <a href="{% url 'about' %}" target="_self" id = "about" name="first_app/about" style="margin-left: 39px;">About</a>
+<!-- <button onclick="document.location='default.asp'">HTML Tutorial</button> -->
+<!-- Creating buttons with singin page and signup page links -->
+<form action="http://localhost:8000/first_app/sign_in/">
+        <button type="submit" name="Sign In" style="margin-left: 1209px;" value="Sign In" >Sign In</button>
+</form>
+<form action="http://localhost:8000/first_app/sign_up/">
+        <button type="submit" name="Sign Up" style="display: inline-flex; margin-left: 20px;" value="Sign Up" >Sign Up</button>
+</form>
+   <!-- <button type="button" name="Sign Up" style="display: inline-flex; margin-left: 20px;padding: " >Sign Up</button> -->
+    <h1 style="margin-left:50px;">Sign In</h1>
+    <p style="margin-left:50px; margin-top:50px;"> Please fill the details to Sign In</p>
+
+<!-- 1. Creating labels first name, last name, and email.
+     2. creating buttons to submit them.-->
+<!--  Creating forms to submit the  sign-up page -->
+<form action="" method="get">
+<div>
+    <label for="email" >Enter Email address</label><br>
+    <input type="email" name="email" id="email" placeholder="Enter email" required>
+</div>
+<div>
+    <label for="password" >Enter Password</label><br>
+    <input type="password" name="password" id="password" placeholder="Enter Password" required>
+</div>
+    <br>
+<div>
+    <button type="submit" name="submit" value="submit">Submit</button>
+</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+</form>
+
+<div>
+    <p>Don't have an account with us?</p><br>
+    <form action="http://localhost:8000/first_app/sign_up/">
+        <button type="submit" name="Sign Up" style="display: inline-flex; margin-left: 20px;" value="Sign Up" >Create New Account</button>
+    </form>
+</div>
+
+
+
+    <h3 style="margin-top: 660px;margin-left: 20px;"> Contact Us </h3>
+    <a style="margin-left: 20px;" href="example@trading.com">example@trading.com </a>
+
+</body>
+</html>

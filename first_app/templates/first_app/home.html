@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home-Django Tutorials</title>
+    {% load custom_tags %}
+</head>
+<body>
+<!--    {% load custom_tags %}-->
+
+    <a href="{% url 'home' %}" target="_self" id = "home" name="first_app/home" style="margin-left: 39px;">Home</a>
+    <a href="{% url 'about' %}" target="_self" id = "about" name="first_app/about" style="margin-left: 39px;">About</a>
+    <button type="button" name="Sign In" style="margin-left: 1209px;" >Sign In</button>
+    <button type="button" name="Sign Up" style="display: inline-flex; margin-left: 20px;padding: " >Sign Up</button>
+    <h1 style="margin-left: 20px;"> Django Tutorials </h1>
+    <br>
+    <h3>Testing custom tags Names</h3>
+    <label> first name:  {{ fullname | modify_name:"first_name"}}</label><br>
+    <label> last name:   {{ fullname | modify_name:"last_name"}}</label><br>
+    <label>Title name:   {{ fullname | modify_name:"title_case"}}</label><br>
+    <div>
+        <h3> Testing custom Template for double, triple numbers</h3>
+    </div>
+    <div>
+        <label> Double a number: {{ 10 | define_number:"double" }}</label><br>
+        <label> Triple a number: {{ 10 | define_number:'triple' }}</label>
+    </div>
+
+    <h3 style="margin-top: 660px;margin-left: 20px;"> Contact Us </h3>
+    <a style="margin-left: 20px;" href="example@trading.com">example@trading.com </a>
+
+
+</body>
+</html>>
