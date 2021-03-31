@@ -17,14 +17,23 @@
     <h3>Testing custom tags Names</h3>
     <label> first name:  {{ fullname | modify_name:"first_name"}}</label><br>
     <label> last name:   {{ fullname | modify_name:"last_name"}}</label><br>
-    <label>Title name:   {{ fullname | modify_name:"title_case"}}</label><br>
+    <label>Title name:   {{ fullname | modify_name:"title_case"}}</label><br><hr>
     <div>
         <h3> Testing custom Template for double, triple numbers</h3>
     </div>
     <div>
         <label> Double a number: {{ 10 | define_number:"double" }}</label><br>
         <label> Triple a number: {{ 10 | define_number:'triple' }}</label>
-    </div>
+    </div><br><hr>
+    <div>
+        <h3>Displaying current time in required format</h3>
+        {% current_time "%d-%m-%Y %H:%M:%S %p"  %}
+    </div><hr>
+    <div>
+        <h3>Displaying Inclusion Tag</h3>
+        {% show_depart_table %}
+    </div><hr>
+
 
     <h3 style="margin-top: 660px;margin-left: 20px;"> Contact Us </h3>
     <a style="margin-left: 20px;" href="example@trading.com">example@trading.com </a>

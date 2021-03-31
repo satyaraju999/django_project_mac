@@ -1,0 +1,18 @@
+{% load custom_tags %}
+<div>
+        <table border="1">
+        <thead>
+            <th>Dept Name</th>
+            <th>Dept Description</th>
+
+        </thead>
+        <tbody>
+        {% for x in departments %}
+        <tr>
+            <td> {{ x.name }} </td>
+            <td> {{ x.description }}</td>
+        </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
