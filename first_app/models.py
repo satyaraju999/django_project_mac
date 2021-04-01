@@ -7,6 +7,9 @@ class Department(models.Model):
     date_created = models.DateTimeField(auto_now=True)
     date_updated = models.DateTimeField(null=True)
 
+    def __str__(self):
+        return f"{self.name} - {self.description}"
+
 
 class Employee(models.Model):
     name = models.CharField(max_length=50,null=False)

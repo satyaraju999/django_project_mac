@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.template.loader import get_template
 register = template.Library()
 from datetime import datetime
-from first_app.models import Department
+from first_app.models import Department, Employee
 
 def modify_name(value, args):
     if args == 'first_name':
@@ -33,6 +33,13 @@ def show_depart_table():
     departs = Department.objects.all()
     return {'departments': departs}
 
+# @register.inclusion_tag('first_app/latest.html')
+def show_employee_table():
+    employs = Employee.objects.all()
+    return {'employees': employs}
+
+emp_template = get_template('first_app/latest.html')
+register.inclusion_tag(emp_template)(show_employee_table)
 
 
 register.filter('modify_name', modify_name)

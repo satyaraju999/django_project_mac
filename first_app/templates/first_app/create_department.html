@@ -5,8 +5,53 @@
     <title>Create Department</title>
 
     <style>
+        table, td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%;
+
+        }
+        td {
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #bbff99;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+          top: 0;
+          width:100%
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover {
+          background-color: #111;
+        }
+
         body {
-        background-color: lightblue;
+        background-color: #DADED4;
         }
 
         .labelStyle {
@@ -73,6 +118,14 @@
     </style>
 </head>
 <body>
+<ul>
+    <li><a href="{% url 'home' %}" target="_self" id = "home" name="first_app/home" >Home</a></li>
+    <li><a href="{% url 'about' %}" target="_self" id = "about" name="first_app/about">About</a></li>
+<!--    <li><button type="button" name="Sign In"  >Sign In</button></li>-->
+<!--    <li><button type="button" name="Sign Up"  >Sign Up</button></li>-->
+</ul>
+
+
 <h1>Welcome to Department Creating Page</h1><br>
 <a href="{% url 'dept_list' %}" style="margin-left:1400px;"><b>Dept List</b></a>
 <label style="margin-left:40px;"> {% now "d M Y" %} </label>

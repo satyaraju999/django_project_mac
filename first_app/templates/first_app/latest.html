@@ -1,18 +1,44 @@
 {% load custom_tags %}
 <div>
-        <table border="1">
+    {% if departments %}
+    <table border="1">
         <thead>
             <th>Dept Name</th>
             <th>Dept Description</th>
-
         </thead>
         <tbody>
         {% for x in departments %}
-        <tr>
-            <td> {{ x.name }} </td>
-            <td> {{ x.description }}</td>
-        </tr>
-
+            <tr>
+                <td> {{ x.name }} </td>
+                <td> {{ x.description }}</td>
+            </tr>
         {% endfor %}
         </tbody>
     </table>
+    {% endif %}
+</div>
+<br>
+<div>
+    {% if employees %}
+    <table border="1">
+        <thead>
+            <th>Name</th>
+            <th>dob</th>
+            <th>salary</th>
+            <th>address</th>
+            <th>Department</th>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+                <tr>
+                    <td>{{ emp.name }}</td>
+                    <td>{{ emp.dob }}</td>
+                    <td>{{ emp.salary }}</td>
+                    <td>{{ emp.address }}</td>
+                    <td>{{ emp.department.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>

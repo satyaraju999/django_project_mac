@@ -6,13 +6,32 @@
 
     <style>
         body{
-       background-color:lightblue;
-       }
+        background-color:#DADED4;
+        }
+        table, td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%;
+
+        }
+        td {
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #bbff99;
+        }
 
     </style>
 </head>
 <body>
-<h1 style="text-align:center;">List of Departments</h1>
+<h1 style="text-align:left; margin-left:45px;">List of Departments</h1>
 <a href="{% url 'create_department'  %}" style="margin-left:1300px;" ><b>Create Departments</b></a>
 <!--<a href="{% url 'dept_list' %}" style="margin-left:100px;" >Show Departments</a>-->
 <label style="margin-left:40px;"> {% now "d M Y" %} </label>
