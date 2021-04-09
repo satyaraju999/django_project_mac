@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Base title {% endblock %}</title>
+
+    {% load static %}
+
+    <script>
+    {% block js %}
+    {% endblock %}
+    </script>
+
+    <style>
+    {% block style %}
+    {% endblock %}
+    </style>
+
+<!-- TODO: Add the Navigation bar to base.html-->
+
+    <link rel="stylesheet" href=" {% static 'css/base.css' %}">
+<!--    <link rel="stylesheet" href="{% static 'img/python-django.png' %}">-->
+
+</head>
+<body style="background-image: url ('https://www.google.com/url?sa=i&url=https%3A%2F%2Fstripe.com%2Fblog%2Fconnect-front-end-experience&psig=AOvVaw3NnTpcPCy-WSZ31kydiFIJ&ust=1617452236351000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOj8yqHF3-8CFQAAAAAdAAAAABAI')">
+    <img src="{% static 'img/python-django.png' %}" width="75" height="40">
+    {% block navbar %}
+    <ul>
+    <li><a href="{% url 'home' %}" target="_self" id = "home" name="first_app/home" >Home</a></li>
+    <li><a href="{% url 'dept_list' %}" target="_self" id = "dept_list" name="first_app/home" >Departments List</a></li>
+    <li><a href="{% url 'emp_list' %}" target="_self" id = "emp_list" name="first_app/home" >Employees list</a></li>
+    <li><a href="{% url 'about' %}" target="_self" id = "about" name="first_app/about">About</a></li>
+<!--    <li><button type="button" name="Sign In"  >Sign In</button></li>-->
+<!--    <li><button type="button" name="Sign Up"  >Sign Up</button></li>-->
+    </ul>
+    {% endblock %}
+    {% block content %}
+    <b>This content is printing from base.html, if you are trying to access other html pages pls look the block contents </b>
+    {% endblock %}
+</body>
+</html>

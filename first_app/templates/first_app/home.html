@@ -1,67 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home-Django Tutorials</title>
-    <style>
-        body {
-        background-color:#DADED4;
-        }
-        table, td, th {
-            border: 1px solid black;
-            padding: 10px;
-        }
-        table {
-            border-collapse: collapse;
-            width: 50%;
+{% extends 'first_app/base.html' %}
+    {% block title %}Home-Django{% endblock %}}
 
-        }
-        td {
-            text-align: center;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        tr:hover {
-            background-color: #bbff99;
-        }
-        ul {
-          list-style-type: none;
-          margin: 0;
-          top: 0;
-          width:100%
-          padding: 0;
-          overflow: hidden;
-          background-color: #333;
-        }
-
-        li {
-          float: left;
-        }
-
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
-        li a:hover {
-          background-color: #111;
-        }
-    </style>
     {% load custom_tags %}
-</head>
-<body>
-<!--    {% load custom_tags %}-->
-<ul>
-    <li><a href="{% url 'home' %}" target="_self" id = "home" name="first_app/home" >Home</a></li>
-    <li><a href="{% url 'about' %}" target="_self" id = "about" name="first_app/about">About</a></li>
-<!--    <li><button type="button" name="Sign In"  >Sign In</button></li>-->
-<!--    <li><button type="button" name="Sign Up"  >Sign Up</button></li>-->
-</ul>
+
+{% block content %}
 <br>
 <br>
     <h1 style="margin-left: 0px;"> Django Tutorials </h1>
@@ -95,5 +37,55 @@
     <a style="margin-left: 20px;" href="example@trading.com">example@trading.com </a>
 
 
-</body>
-</html>>
+{% endblock %}
+
+
+<!--<style>-->
+<!--        body {-->
+<!--        background-color:#DADED4;-->
+<!--        }-->
+<!--        table, td, th {-->
+<!--            border: 1px solid black;-->
+<!--            padding: 10px;-->
+<!--        }-->
+<!--        table {-->
+<!--            border-collapse: collapse;-->
+<!--            width: 50%;-->
+
+<!--        }-->
+<!--        td {-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        th {-->
+<!--            background-color: #4CAF50;-->
+<!--            color: white;-->
+<!--        }-->
+<!--        tr:hover {-->
+<!--            background-color: #bbff99;-->
+<!--        }-->
+<!--        ul {-->
+<!--          list-style-type: none;-->
+<!--          margin: 0;-->
+<!--          top: 0;-->
+<!--          width:100%-->
+<!--          padding: 0;-->
+<!--          overflow: hidden;-->
+<!--          background-color: #333;-->
+<!--        }-->
+
+<!--        li {-->
+<!--          float: left;-->
+<!--        }-->
+
+<!--        li a {-->
+<!--          display: block;-->
+<!--          color: white;-->
+<!--          text-align: center;-->
+<!--          padding: 14px 16px;-->
+<!--          text-decoration: none;-->
+<!--        }-->
+
+<!--        li a:hover {-->
+<!--          background-color: #111;-->
+<!--        }-->
+<!--    </style>-->

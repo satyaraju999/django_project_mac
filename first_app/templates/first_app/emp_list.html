@@ -1,0 +1,33 @@
+{% extends 'first_app/base.html' %}
+
+{% block title %}Employees list{% endblock %}
+
+{% block content %}
+
+<h1>Employee List</h1>
+<table>
+    <thead>
+    <th>Emp Name</th>
+    <th>Emp DOB</th>
+    <th>Emp salary</th>
+    <th>Emp Address</th>
+    <th>Emp Department</th>
+    </thead>
+    <tbody>
+    <br>
+    <a style="margin-left:1300px;" href="{% url 'login_form' %}"><button>CREATE EMPLOYEE</button></a>
+    {% if employees %}
+        {% for emp in employees %}
+            <tr>
+                <td>{{ emp.name }}</td>
+                <td>{{emp.dob}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.address}}</td>
+                <td>{{emp.department}}</td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+
+</table>
+{% endblock %}

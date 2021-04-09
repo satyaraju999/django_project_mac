@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .models import  Department, Areas, Employee
+from .models import  Department, Areas, Employee, Inventory
+from .forms import EmployeeForm, InventoryModelForm
 
 def home(request):
     return render(request, 'first_app/home.html', context={'fullname': 'satya raju kusampudi'})
@@ -87,5 +88,91 @@ def create_depatment(request):
 def dept_list(request):
     departments = Department.objects.all()
     context = {}
+    # PASSING DEPARTMENTS TO CONTEXT , AND USING THE SAME departments in HTML TO RENDER IN THE WEBPAGE
     context['departments'] = departments
     return render(request, template_name="first_app/dept_list.html", context=context)
+
+
+def render_with_django_form(request):
+    context = {}
+    if request.method == 'GET':
+        #
+        form = EmployeeForm()
+        context['employeeForm'] = form
+        return render(request, template_name='first_app/login_form.html', context=context)
+
+    if request.method == 'POST':
+        form = EmployeeForm(request.POST)
+        context['employeeForm'] = form
+        if form.is_valid():
+            emp_name = form.cleaned_data['name']
+            emp_dob = form.cleaned_data['birth_date']
+            emp_salary = form.cleaned_data['salary']
+            emp_address = form.cleaned_data['address']
+            department= Department.objects.get(pk=2)
+
+            emp1 = Employee(name=emp_name, dob=emp_dob, salary=emp_salary, address=emp_address, department=department)
+            emp1.save()
+            return redirect(to='emp_list')
+        else:
+            return render(request, template_name='first_app/login_form.html', context=context)
+
+def emp_list(request):
+    employees = Employee.objects.all()
+    context = {}
+    context['employees'] = employees
+
+    return render(request, template_name='first_app/emp_list.html',context=context)
+
+def inventory_view(request):
+    context = {}
+    context['inventoryForm'] = InventoryModelForm()
+    if request.method == 'GET':
+        return render(request,template_name='first_app/inventory.html', context=context)
+    elif request.method == 'POST':
+        form = InventoryModelForm(request.POST)
+        context['inventoryForm'] = form
+
+        if form.is_valid():
+            form.save()
+
+            return redirect(to='inventory_list')
+        else:
+            return render(request, template_name='first_app/inventory.html',context=context)
+def inventory_list(request):
+    inventory = Inventory.objects.all()
+    context= {}
+    context['inventory'] = inventory
+
+    return render(request, template_name='first_app/inventory_list.html', context= context)
+
+
+
+
+
+
+
+
+    # # GIVING EMPTY CONTEXT, IS USED FOR DYNAMIC DATA LOADING TO WEB PAGE
+    # context = {}
+    #
+    # # CHECKING WHEATHER THE METHOD IS POST OR GET, TO SEND DATA SAFE IN POST, OR GET(TO RETRIEVE THE HTML FORM)
+    # if request.method == 'POST':
+    #     # CAPTURING THE EmployeeForm class from forms.py , and using request.POST to capture the client data for intial validation
+    #     # Server side
+    #     # mapping EmployeeForm to variable form
+    #     form = EmployeeForm(request.POST)
+    #     context['employeeForm'] = form
+    #
+    #     # is_valid() is used for server side validation using forms, cleans
+    #     if form.is_valid():
+    #         return HttpResponse("Form submitted sucessfully")
+    #
+    #
+    # else:
+    #     form = EmployeeForm()
+    #     context['employeeForm'] = form
+    #
+    # return render(request, template_name="first_app/login_form.html", context=context)
+
+# DOUBT : GET AND POST METHODS , DO WE HAVE CALL GET METHOD TO OPEN THE PAGE

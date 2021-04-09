@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dept list</title>
+{% extends 'first_app/base.html' %}
+
+{% block title %}Dept list {% endblock %}
 
     <style>
         body{
@@ -29,13 +27,14 @@
         }
 
     </style>
-</head>
-<body>
+
+{% block content %}
+
 <h1 style="text-align:left; margin-left:45px;">List of Departments</h1>
-<a href="{% url 'create_department'  %}" style="margin-left:1300px;" ><b>Create Departments</b></a>
+<a href="{% url 'create_department'  %}" style="margin-left:1400px;" ><button>Create Departments</button></a>
 <!--<a href="{% url 'dept_list' %}" style="margin-left:100px;" >Show Departments</a>-->
-<label style="margin-left:40px;"> {% now "d M Y" %} </label>
-<label style="margin-left:20px;">Admin: {{ 'satya'| title }} </label>
+<!--<label style="margin-left:40px;"> {% now "d M Y" %} </label>-->
+<!--<label style="margin-left:20px;">Admin: {{ 'satya'| title }} </label>-->
 
 <table style="margin-left:40px;" border="1">
     <thead>
@@ -54,5 +53,6 @@
         {% endif %}
     </tbody>
 </table>
-</body>
-</html>
+
+
+{% endblock %}

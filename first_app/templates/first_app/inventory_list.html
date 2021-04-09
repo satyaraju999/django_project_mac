@@ -1,0 +1,35 @@
+{% extends 'first_app/base.html' %}
+
+{% load custom_tags %}
+
+{% block title %} Inventory List {% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+    <th>Item</th>
+    <th>Item Code</th>
+    <th>Item Condition</th>
+    <th>Quantity</th>
+    </thead>
+    <tbody>
+    <br>
+    <a style="margin-left:1300px;" href="{% url 'create_inventory' %}"><button>CREATE INVENTORY</button></a>
+
+
+        {% if inventory %}
+            {% for i in inventory %}
+                <tr>
+                    <td>{{ i.item }}</td>
+                    <td>{{ i.item_code }}</td>
+                    <td>{{ i.item_condition }}</td>
+                    <td>{{ i.quantity }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
