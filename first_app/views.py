@@ -126,6 +126,8 @@ def emp_list(request):
 
 def inventory_view(request):
     context = {}
+
+    # The 'invetoryForm' is used in HTML to render the data dynamically
     context['inventoryForm'] = InventoryModelForm()
     if request.method == 'GET':
         return render(request,template_name='first_app/inventory.html', context=context)

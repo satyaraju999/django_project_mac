@@ -5,7 +5,18 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    {{ inventoryForm.as_p }}
+    <table>
+            {% for field in inventoryForm.visible_fields %}
+                <tr>
+                    <td>{{ field.label_tag }}</td>
+                    <td>
+                        {{ field }}
+                        {{ field.errors }}
+                    </td>
+
+                </tr>
+            {% endfor %}
+    </table>
 
     <button type="submit">SUBMIT</button>
 
